@@ -1,4 +1,8 @@
 def call(String S3_URL) {
-    sh 'aws s3 cp *.html ${S3_URL}'
-    sh 'rm -rf *.html'
+    sh """
+        aws s3 cp . ${S3_URL} \
+            --recursive \
+            --exclude "*" \
+            --include "*.html"
+    """
 }
