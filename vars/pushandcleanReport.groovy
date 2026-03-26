@@ -4,5 +4,6 @@ def call(String S3_URL) {
             --recursive \
             --exclude "*" \
             --include "*.html"
+        rm -rf *.html
     """
 }
